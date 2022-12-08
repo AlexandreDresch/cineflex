@@ -27,7 +27,7 @@ export function Home() {
       <MoviesContainer>
         {
             movies.map((item) => (
-                <Movie key={item.id} image={item.posterURL}/>
+                <Movie key={item.id} image={item.posterURL} movieID={item.id}/>
             ))
         }
       </MoviesContainer>

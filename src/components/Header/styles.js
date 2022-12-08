@@ -6,6 +6,8 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #C3CFD9;
+    position: sticky;
+    top: 0;
 `;
 
 export const Title = styled.h1`
