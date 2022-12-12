@@ -59,8 +59,8 @@ export function Seats() {
       CPF: CPFValue,
     };
 
-    if (!CPFValue) {
-      return alert("Insira um número de CPF");
+    if (!CPFValue || CPFValue.length < 11 || CPFValue.length > 11) {
+      return alert("Insira um número de CPF válido");
     } else if (!name) {
       return alert("Insira o seu nome");
     } else if (selectedSeats.length === 0) {
@@ -85,9 +85,7 @@ export function Seats() {
 
   return (
     <Container>
-      <Header />
-
-      
+      <Header />      
           <Title title={"Selecione o(s) assento(s)"} />
 
           <SeatsContainer>
