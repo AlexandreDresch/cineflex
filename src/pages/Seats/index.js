@@ -12,6 +12,7 @@ import { api } from "../../services/api";
 import { Container, SeatsContainer, NotesContainer } from "./styles";
 import { Form } from "../../components/Form";
 import { Loading } from "../../components/Loading";
+import { ReturnButton } from "../../components/ReturnButton";
 
 export function Seats() {
   const [isLoading, setIsLoading] = useState(true);
@@ -85,7 +86,8 @@ export function Seats() {
 
   return (
     <Container>
-      <Header />      
+      <Header />    
+      <ReturnButton />  
           <Title title={"Selecione o(s) assento(s)"} />
 
           <SeatsContainer>
@@ -106,7 +108,9 @@ export function Seats() {
           </NotesContainer>
 
           <Form
+            name={name}
             setName={setName}
+            CPFValue={CPFValue}
             setCPFValue={setCPFValue}
             handleSubmit={handleSubmit}
           />

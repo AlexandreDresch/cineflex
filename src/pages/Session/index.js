@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Hour } from "../../components/Hour";
+import { ReturnButton } from "../../components/ReturnButton";
 import { Title } from "../../components/Title";
 
 import { api } from "../../services/api";
@@ -32,7 +33,7 @@ export function Session() {
   return (
     <Container>
       <Header />
-
+      <ReturnButton />
       <Title title="Selecione o horário" />
 
       {days.map((item) => (
