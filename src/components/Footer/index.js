@@ -8,7 +8,7 @@ import {
 
 export function Footer({movieImage, movieTitle, selectedHour}) {
     return (
-        <Container>
+        <Container data-test="footer">
             <ImageContainer>
                 <Image src={movieImage}/>
             </ImageContainer>

@@ -1,17 +1,17 @@
 import { HourButton } from "./HourButton";
 import { Container, Text, ButtonContainer } from "./styles";
 
-export function Hour({weekDay, date, firstHour, secondHour }) {
+export function Hour({weekDay, date, firstHour, secondHour, firstID, secondID }) {
     return (
-        <Container>
+        <Container data-test="movie-day" >
             <Text>
                 {weekDay} - {date}
             </Text>
 
             <ButtonContainer>
-                <HourButton hour={firstHour}/>
+                <HourButton hour={firstHour} IDSession={firstID}/>
 
-                <HourButton hour={secondHour}/>
+                <HourButton hour={secondHour} IDSession={secondID}/>
             </ButtonContainer>
         </Container>
     )

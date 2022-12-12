@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-display: flex;
-width: 375px;
-height: 117px;
-padding: 14px 10px;
-background-color: #DFE6ED;
-border-top: 1px solid #9EADBA;
-position: sticky;
-bottom: 0;
+  display: flex;
+  width: 375px;
+  height: 117px;
+  padding: 14px 10px;
+  background-color: #dfe6ed;
+  border-top: 1px solid #9eadba;
+  position: sticky;
+  bottom: 0;
 `;
 
 export const ImageContainer = styled.div`
@@ -19,7 +19,6 @@ export const ImageContainer = styled.div`
   padding: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
-  
 `;
 
 export const Image = styled.img`
@@ -28,13 +27,13 @@ export const Image = styled.img`
 `;
 
 export const TextContainer = styled.div`
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Text = styled.p`
-font-family: 'Roboto';
-font-weight: 400;
-font-size: 24px;
-color: #293845;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 24px;
+  color: #293845;
 `;

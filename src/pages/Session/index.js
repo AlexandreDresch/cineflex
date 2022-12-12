@@ -27,6 +27,8 @@ export function Session() {
       });
   }, [idFilme]);
 
+  console.log(movieData)
+
   return (
     <Container>
       <Header />
@@ -40,6 +42,8 @@ export function Session() {
           date={item.date}
           firstHour={item.showtimes[0].name}
           secondHour={item.showtimes[1].name}
+          firstID={item.showtimes[0].id}
+          secondID={item.showtimes[1].id}
         />
       ))}
 

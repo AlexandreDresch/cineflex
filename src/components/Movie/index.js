@@ -3,7 +3,7 @@ import { Container, Image } from './styles.js';
 
 export function Movie({image, movieID}) {
     return (
-        <Container>
+        <Container data-test="movie">
             <Link to={`/sessoes/${movieID}`}>
                 <Image src={image}/>
             </Link>
