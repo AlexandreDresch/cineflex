@@ -73,14 +73,14 @@ export function Seats() {
     let movieTitle = movieData.movie.title;
 
     let userData = {
-      ids: [...selectedSeats],
+      ids: selectedSeats,
       name: name,
       cpf: CPFValue.toString(),
     };
 
     api
       .post("/seats/book-many", userData)
-      .then((response) => {
+      .then(() => {
         navigate("/sucesso", {
           state: { movieTitle, date, time, selectedSeats, name, CPFValue },
         });
