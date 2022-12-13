@@ -62,7 +62,7 @@ export function Seats() {
 
     if (!CPFValue || CPFValue.length < 11 || CPFValue.length > 11) {
       return alert("Insira um número de CPF válido");
-    } else if (!name || !validateName(name)) {
+    } else if (!name || validateName(name) === false) {
       return alert("Insira o seu nome corretamente");
     } else if (selectedSeats.length === 0) {
       return alert("Selecione ao menos uma cadeira");
@@ -75,7 +75,7 @@ export function Seats() {
     let userData = {
       ids: [...selectedSeats],
       name: name,
-      cpf: CPFValue,
+      cpf: CPFValue.toString(),
     };
 
     api
