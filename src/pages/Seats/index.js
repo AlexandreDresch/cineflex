@@ -51,19 +51,19 @@ export function Seats() {
     }
   }
 
+  function validateName(name) {
+    let regex = /^[a-zA-Z ]{2,30}$/;
+
+    return regex.test(name);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    let userData = {
-      ids: [...selectedSeats],
-      name: name,
-      CPF: CPFValue,
-    };
-
     if (!CPFValue || CPFValue.length < 11 || CPFValue.length > 11) {
       return alert("Insira um número de CPF válido");
-    } else if (!name) {
-      return alert("Insira o seu nome");
+    } else if (!name || !validateName(name)) {
+      return alert("Insira o seu nome corretamente");
     } else if (selectedSeats.length === 0) {
       return alert("Selecione ao menos uma cadeira");
     }
@@ -71,6 +71,12 @@ export function Seats() {
     let date = movieData.day.date;
     let time = movieData.name;
     let movieTitle = movieData.movie.title;
+
+    let userData = {
+      ids: [...selectedSeats],
+      name: name,
+      cpf: CPFValue,
+    };
 
     api
       .post("/seats/book-many", userData)
