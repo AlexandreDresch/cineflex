@@ -1,11 +1,9 @@
-import { Container, PageTitle } from "./styles"
+import { Container, PageTitle } from "./styles";
 
 export function Title({ title }) {
-    return (
-        <Container>
-            <PageTitle>
-                {title}
-            </PageTitle>
-        </Container>
-    )
+  return (
+    <Container>
+      <PageTitle>{title}</PageTitle>
+    </Container>
+  );
 }

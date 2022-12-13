@@ -10,8 +10,19 @@ export const Container = styled.div`
 export const SeatButton = styled.div`
   width: 26px;
   height: 26px;
-  background-color: ${(props) => props.color === 'available' ? '#c3cfd9': props.color === 'unavailable' ? '#FBE192' : '#1AAE9E'};
-  border: 1px solid ${(props) => props.color === 'available' ? '#7B8B99': props.color === 'unavailable' ? '#F7C52B' : '#0E7D71'};;
+  background-color: ${(props) =>
+    props.color === "available"
+      ? "#c3cfd9"
+      : props.color === "unavailable"
+      ? "#FBE192"
+      : "#1AAE9E"};
+  border: 1px solid
+    ${(props) =>
+      props.color === "available"
+        ? "#7B8B99"
+        : props.color === "unavailable"
+        ? "#F7C52B"
+        : "#0E7D71"};
   border-radius: 12px;
 `;
 

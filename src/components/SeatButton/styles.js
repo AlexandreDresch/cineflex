@@ -6,8 +6,8 @@ export const Container = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.color ? '#1AAE9E': '#c3cfd9'};
-  border: 1px solid ${(props) => props.color ? '#0E7D71': '#7B8B99'};
+  background-color: ${(props) => (props.color ? "#1AAE9E" : "#c3cfd9")};
+  border: 1px solid ${(props) => (props.color ? "#0E7D71" : "#7B8B99")};
   border-radius: 12px;
 `;
 
@@ -17,8 +17,8 @@ export const ContainerDisabled = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FBE192;
-  border: 1px solid #F7C52B;
+  background-color: #fbe192;
+  border: 1px solid #f7c52b;
   border-radius: 12px;
 `;
 

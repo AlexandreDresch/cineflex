@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 70px;
   height: 70px;
   border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #E8833A; /* Black */
+  border-top: 10px solid #e8833a; /* Black */
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 

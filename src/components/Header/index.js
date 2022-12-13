@@ -1,14 +1,9 @@
-import {
-    Container,
-    Title,
-} from './styles.js';
+import { Container, Title } from "./styles.js";
 
 export function Header() {
-    return (
-        <Container>
-            <Title>
-                CINEFLEX
-            </Title>
-        </Container>
-    )
+  return (
+    <Container>
+      <Title>CINEFLEX</Title>
+    </Container>
+  );
 }

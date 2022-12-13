@@ -1,16 +1,10 @@
-import {
-    Container,
-    SeatButton,
-    Text,
-} from './styles';
+import { Container, SeatButton, Text } from "./styles";
 
-export function SeatNote({seatStatus, seatColor}) {
-    return (
-        <Container>
-            <SeatButton color={seatColor} />
-            <Text>
-                {seatStatus}
-            </Text>
-        </Container>
-    )
+export function SeatNote({ seatStatus, seatColor }) {
+  return (
+    <Container>
+      <SeatButton color={seatColor} />
+      <Text>{seatStatus}</Text>
+    </Container>
+  );
 }

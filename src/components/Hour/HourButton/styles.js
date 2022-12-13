@@ -13,5 +13,5 @@ export const Text = styled.p`
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
 `;

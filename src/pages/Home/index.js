@@ -9,38 +9,35 @@ import { Movie } from "../../components/Movie/index.js";
 import { Loading } from "../../components/Loading/index.js";
 
 export function Home() {
-    const [ isLoading, setIsLoading ] = useState(true)
-    const [ movies, setMovies ] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
 
-    useEffect(() => {
-        api
-          .get("/movies")
-          .then((response) => {
-            setMovies(response.data);
-            setIsLoading(false);
-          })
-          .catch((err) => {
-            console.error("ERROR: " + err);
-          });
-      }, []);
+  useEffect(() => {
+    api
+      .get("/movies")
+      .then((response) => {
+        setMovies(response.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error("ERROR: " + err);
+      });
+  }, []);
 
   return (
     <Container>
       <Header />
       <Title title="Selecione o filme" />
 
-      {
-        isLoading ?
+      {isLoading ? (
         <Loading />
-        :
+      ) : (
         <MoviesContainer>
-        {
-            movies.map((item) => (
-                <Movie key={item.id} image={item.posterURL} movieID={item.id}/>
-            ))
-        }
-      </MoviesContainer>
-      }
+          {movies.map((item) => (
+            <Movie key={item.id} image={item.posterURL} movieID={item.id} />
+          ))}
+        </MoviesContainer>
+      )}
     </Container>
   );
 }

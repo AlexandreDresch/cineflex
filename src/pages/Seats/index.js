@@ -6,14 +6,13 @@ import { SeatButton } from "../../components/SeatButton";
 import { SeatNote } from "../../components/SeatNote";
 import { Footer } from "../../components/Footer";
 import { Title } from "../../components/Title";
+import { Form } from "../../components/Form";
+import { Loading } from "../../components/Loading";
+import { ReturnButton } from "../../components/ReturnButton";
 
 import { api } from "../../services/api";
 
 import { Container, SeatsContainer, NotesContainer } from "./styles";
-import { Form } from "../../components/Form";
-import { Loading } from "../../components/Loading";
-import { ReturnButton } from "../../components/ReturnButton";
-import axios from "axios";
 
 export function Seats() {
   const [isLoading, setIsLoading] = useState(true);
@@ -79,29 +78,26 @@ export function Seats() {
       cpf: CPFValue.toString(),
     };
 
-    console.log(userData);
-
-    // api
-    //   .post("/seats/book-many", userData)
-    //   .then(() => {
-    //     navigate("/sucesso", {
-    //       state: { movieTitle, date, time, selectedSeats, name, CPFValue },
-    //     });
-    //   })
-    //   .catch((error) => console.log(error.response.data));
-
-    const request = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", userData)
-    request.then(() => navigate("/sucesso", {state: { movieTitle, date, time, selectedSeats, name, CPFValue }}));
+    api
+      .post("/seats/book-many", userData)
+      .then(() => {
+        navigate("/sucesso", {
+          state: { movieTitle, date, time, selectedSeats, name, CPFValue },
+        });
+      })
+      .catch((error) => console.log(error.response.data));
   }
-
-  console.log(movieData);
 
   return (
     <Container>
-      <Header />    
-      <ReturnButton />  
-          <Title title={"Selecione o(s) assento(s)"} />
+      <Header />
+      <ReturnButton />
 
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <Title title={"Selecione o(s) assento(s)"} />
           <SeatsContainer>
             {seats.map((seat) => (
               <SeatButton
@@ -113,6 +109,7 @@ export function Seats() {
               />
             ))}
           </SeatsContainer>
+
           <NotesContainer>
             <SeatNote seatStatus={"Selecionado"} seatColor={"selected"} />
             <SeatNote seatStatus={"Disponível"} seatColor={"available"} />
@@ -127,12 +124,13 @@ export function Seats() {
             handleSubmit={handleSubmit}
           />
 
-        <Footer
+          <Footer
             movieImage={movieData.movie?.posterURL}
             movieTitle={movieData.movie?.title}
             selectedHour={`${movieData.day?.weekday} - ${movieData.name}`}
-        />        
-      
+          />
+        </>
+      )}
     </Container>
   );
 }
