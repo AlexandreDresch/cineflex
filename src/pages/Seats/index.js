@@ -104,8 +104,8 @@ export function Seats() {
                 key={seat.id}
                 seatNumber={seat.name}
                 isAvailable={seat.isAvailable}
-                selectSeat={() => selectSeat(+seat.name)}
-                isSelected={selectedSeats.includes(+seat.name)}
+                selectSeat={() => selectSeat(seat.id)}
+                isSelected={selectedSeats.includes(seat.id)}
               />
             ))}
           </SeatsContainer>
